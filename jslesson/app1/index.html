@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        
+        <title>JS APP 1</title>
+    </head>
+    <body class="home_page">
+        <header>
+            <div class="container">
+                <nav>
+                    <ul>
+                        <li class="menu-item"><a href="./index.html">Home</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <h1>JS LESSONS</h1>
+                <h2>Variables</h2>
+                <p>let, const</p> 
+                <p>let = let replace variables</p> 
+                <p>const = don't let replace variables, it s a constant value</p>
+                <p>Examples: <br>
+                <pre>
+                    // the value of age will be replaced by 31
+                    let age = 30;
+                    age = 31
+                    console.log(age);
+                    
+                    // this will show n error in console because const doesn't let replace values
+                    const age = 30;
+                    age = 31
+                    console.log(age);</pre></p>
+                <h2>Data types</h2>
+                <p>String, Number, Boolean, null, undefined, Symbol</p> 
+                <p>Examples: <br>
+                    <pre>
+                        const name = 'Jhon';
+                        const age = 30;
+                        const rating = 4.5;
+                        const isCool = true;
+                        const x = null;
+                        const y = undefined;
+                        let z;
+
+                        // this will return string
+                        console.log(typeof(name));
+
+                        // this will return number
+                        console.log(typeof(age));
+
+                        // this will return number
+                        console.log(typeof(rating));
+
+                        // this will return boolean
+                        console.log(typeof(isCool));
+
+                        // this will return object
+                        console.log(typeof(x));
+
+                        // this will return undefined
+                        console.log(typeof(y));
+
+                        // this will return undefined
+                        console.log(typeof(z));
+                    </pre>
+                </p>
+                <h2>Concatenation</h2>
+                <p><pre>console.log('My name is' + name +' and I am ' + age )</pre></p> 
+                <p><pre>console.log(`My name is ${name} and I am ${age}`)</pre></p> 
+
+                <h2>String Methods</h2>
+                <p>length property, upper and lowercase methods</p>
+                <p>
+                    <pre>
+                    const s = "Hello World";
+
+                    // will return 11
+                    console.log(s.length);
+
+                    // will return HELLO WORLD
+                    console.log(s.toUpperCase());
+
+                    // Will return hello world
+                    console.log(s.toLowerCase());
+                </pre>
+                </p>
+                <p>Split</p>
+                <p> creates an array from string with a delimiter.<br>
+                    Example: <br>
+                    <pre>
+                    const s = "Technology, Computers, It, Code";
+
+                    // 
+                    console.log(s.split(', '));
+                </pre>
+                </p>
+                <h2>Arrays</h2>
+                <p>Variable that holds multiple values</p>
+                <p>
+                    <pre>
+                    const numbers = new Array(1,2,3,4,5);
+
+                    // will return (5) [1, 2, 3, 4, 5]
+                    console.log(numbers);
+                </pre>
+                </p>
+                <p>
+                    <pre>
+                    const fruits = ['apples', 'oranges', 'bananas'];
+                    //  will return (3) ["apples", "oranges", "bananas"]
+                    console.log(fruits);
+                </pre>
+                </p>
+                <p>Acces to an item</p>
+                <p>
+                    <pre>
+                        // will return apples
+                        console.log(fruits[0]);
+
+                        // will return oranges
+                        console.log(fruits[1]);
+
+                        // will return bananas
+                        console.log(fruits[2]);
+                    </pre>
+                </p>
+                <p>Adding new item</p>
+                <p>
+                    <pre>
+                        const fruits = ['apples', 'oranges', 'bananas'];
+
+                        fruits[3] = "grapes";
+
+                        // will return grapes
+                        console.log(fruits[3]);
+
+                    </pre>
+                </p>
+                <h2>Array Methods</h2>
+                <p>push, unshift, pop</p>
+                <p>
+                    <pre>
+
+                        fruits.push('mangos');
+
+                        // will return (5) ["apples", "oranges", "bananas", "grapes", "mangos"]
+                        console.log(fruits);
+
+                    </pre>
+
+                    <pre>
+
+                        fruits.unshift('strawberries');
+                        
+                        // will return (5) ["strawberries", "apples", "oranges", "bananas", "grapes", "mangos"]
+                        console.log(fruits);
+
+                    </pre>
+
+                    <pre>
+                        
+                        // will return mangos
+                        console.log(fruits.pop());
+
+                    </pre>
+                </p>
+                <p>pop</p>
+                <p>
+                    will get the last item of array
+                    <pre>
+                        
+                        // will return mangos
+                        console.log(fruits.pop());
+
+                    </pre>
+                </p>
+                <p>Array.isArray()</p>
+                <p>
+                    will return true if the variable is an array and false if it isn't
+                    <pre>
+                        
+                        // will return true
+                        console.log(Array.isArray(fruits));
+
+                        // will return false
+                        console.log(Array.isArray('hello'));
+
+                    </pre>
+                </p>
+                <p>indexOf()</p>
+                <p>
+                    will return true if the variable is an array and false if it isn't
+                    <pre>
+                        
+                        // will return  2
+                        console.log(fruits.indexOf('oranges'));
+
+                    </pre>
+                </p>
+
+                <h2>Directory Objects</h2>
+                <p>
+                    
+                    <pre>
+                        const person = {
+                            firstName: 'John',
+                            lastName: 'Doe',
+                            age: 30,
+                            hobbies: ['music', 'movies', 'sports'],
+                            addres: {
+                                street: '50 main st',
+                                city: 'Boston',
+                                state: 'MA'
+                            }
+                        }
+                        
+                        // will return  {firstName: "John", lastName: "Doe", age: 30, hobbies: Array(3), addres: {…}}
+                        console.log(person);
+
+                    </pre>
+                </p>
+                <p>Access to an Directory Object value</p>
+                <p>
+                    
+                    <pre>
+                        // will return  John
+                        console.log(person.firstName);
+
+                        // will return  music
+                        console.log(person.hobbies[0]);
+
+                        // will return  sports
+                        console.log(person.hobbies.pop());
+
+                        // will return  Boston
+                        console.log(person.address.city);
+                    </pre>
+                </p>
+
+                <p>Creating variables from Directory Object values</p>
+                <p>
+                    
+                    <pre>
+
+                        const {firstName, lastName, age} = person;
+
+                        // will return  John Doe
+                        console.log(firstName, lastName);
+
+                        // will return  30 years old
+                        console.log(`${age} years old`);
+
+                    </pre>
+                </p>
+                <p>Creating variables from an Directory Object of a object values</p>
+                <p>
+                    
+                    <pre>
+                        const { address : {city, street} } = person;
+
+                        // will return  Boston
+                        console.log(city);
+                        
+                        // will return  50 main st
+                        console.log(street);
+
+                        const {city, street} = person.address;
+
+                        // will return  Boston
+                        console.log(city);
+                        
+                        // will return  50 main st
+                        console.log(street);
+
+
+                    </pre>
+                </p>
+                <p>Adding property to an Directory Object</p>
+                <p>
+                    
+                    <pre>
+                        person.email = 'jhondoe@mail.com';
+                        // will return  object with email in it
+                        console.log(person);
+
+                    </pre>
+                </p>
+                <h2>JSON</h2>
+                <p>
+                    Convert ARRAY to JSON: <br>
+                    <pre>
+                        //initialize array with Directory Object.
+                        const todos = [
+                            {
+                                id: 1,
+                                text: 'Take out trash',
+                                isCompleted: true
+                            },
+                            {
+                                id: 2,
+                                text: 'Meeting with boss',
+                                isCompleted: true
+                            },
+                            {
+                                id: 3,
+                                text: 'Dentist appt',
+                                isCompleted: false
+                            }
+                        ];
+
+                        const todoJSON = JSON.stringify(todos);
+
+                        // will return array todos in JSON format : (3) [{…}, {…}, {…}]
+                        console.log(todos);
+
+                    </pre>
+                </p>
+                <h2>FOR / WHILE LOOPS</h2>
+                <p>
+                    <pre>
+                        
+                        // for loop
+                        for (let i = 0; i < 10; i++) {
+                            console.log(i);
+                        }
+
+                        // while loops.
+                        let i = 0;
+                        while (i < 10) {
+                            console.log(i);
+                            i ++;
+                        }  
+
+                    </pre>
+                </p>
+                <p>iterate with array of objects with for loop.
+                    <pre>
+                        //initialize array with objects.
+                        const todos = [
+                            {
+                                id: 1,
+                                text: 'Take out trash',
+                                isCompleted: true
+                            },
+                            { 
+                                id: 2,
+                                text: 'Meeting with boss',
+                                isCompleted: true
+                            },
+                            {
+                                id: 3,
+                                text: 'Dentist appt',
+                                isCompleted: false
+                            }
+                        ];
+                        
+                        // for loop using length property. 
+                        for (let i = 0; i < todos.length; i++) {
+                            console.log(todos[i].text); 
+                        }
+
+                        // for using of (like a foreach)
+                        for (let todo of todos) {
+                            // will return each object of the array todos
+                            console.log(todo);
+
+                            // will return text porperty of each object of the array todos
+                            console.log(todo.text);
+                        }
+
+                    </pre>
+                </p>
+                <h2>array.forEach, array.map, array.filter</h2>
+                <p>
+                    <pre>
+                        
+                        // foreach
+                        todos.forEach(function(todo){
+                            // will return each object in the array todos
+                            console.log(todo);
+
+                            // will return text of each object in the array todos
+                            console.log(todo.text);
+                        });
+
+                        // map
+                        const todoText = todos.map(function(todo){
+                            return todo.text;
+                        });
+                        // will return array of text properties ["Take out trash", "Meeting with boss", "Dentist appt"]
+                        console.log(todoText);
+
+                        // filter
+                        const todoCompleted = todos.filter(function(todo){
+                            return todo.isCompleted === true;
+                        });
+                        // will return 2 objects wich have the isCompleted property as true (filter by isCompleted true)
+                        console.log(todoCompleted);
+
+                        // map text in the objects of the array wich isCompleted is true
+                        const todoCompleted = todos.filter(function(todo){
+                            return todo.isCompleted === true;
+                        }).map(function(todo){
+                            return todo.text;
+                        })
+                        // will return array with two text properties of objects wich have the isCompleted property as true (filter by isCompleted true) ["Take out trash", "Meeting with boss"]
+                        console.log(todoCompleted);
+
+                    </pre>
+                </p>
+                <h2>Conditionals</h2>
+                <p>if, if else</p>
+                <p>
+                    <pre>
+                        const x = 10;
+
+                        if(x == 10) {
+                            console.log('x is 10');
+                        }
+                        
+                        // conditional bypassing the data type
+                        
+                        const s = '10';
+                        
+                        if(s == 10) {
+                            // true
+                            console.log('s is 10');
+                        }
+                        
+                        // conditional including datatype
+                        
+                        const s = '10';
+                        
+                        if(s === 10) {
+                            // false because the data type
+                            console.log('dont get here');
+                        }
+                        else
+                        {
+                            console.log('same values of 10 but with diferent datatypes');
+                        }
+                        
+                        const s = 10;
+                        
+                        if(s === 10) {
+                            // true because the datatypes
+                            console.log('s is 10');
+                        }
+
+                        </pre>
+                </p>
+                <p>Single line condition</p>
+                <p>
+                    <pre>
+                        
+                        const x = 10;
+
+                        const color = x > 10 ? 'red' : 'blue';
+
+                        // will return blue
+                        console.log(color);
+
+                    </pre>
+                </p>
+                <p>Switch</p>
+                <p>
+                    <pre>
+                        
+                        const x = 11;
+
+                        const color = x > 10 ? 'red' : 'blue';
+
+                        switch(color) {
+                            case 'red':
+                                console.log('color is red');
+                                break;
+                            case 'blue':
+                                console.log('color is blue');
+                                break;
+                            default:
+                                console.log('color is not red or blue');
+                        }
+
+                    </pre>
+                </p>
+                <h2>Function</h2>
+                <p>
+                    <pre>
+                        
+                        function addNums(num1, num2) {
+                            console.log(num1 + num2);
+                        }
+                        
+                        // will return 9
+                        addNums(5, 4);
+
+                    </pre>
+                </p>
+                <p>Default parameters
+                    <pre>
+                        
+                        function addNums(num1 = 1, num2 = 1) {
+                            console.log(num1 + num2);
+                        }
+                        
+                        // will return 2
+                        addNums();
+
+                    </pre>
+                </p>
+                <p>Return 
+                    <pre>
+                        
+                        function addNums(num1 = 1, num2 = 1) {
+                            return num1 + num2;
+                        }
+                        
+                        // will return 2
+                        console.log(addNums(4, 5));
+
+                    </pre>
+                </p>
+                <p>Function as a variable with return
+                    <pre>
+                        
+                        const addNums = (num1 = 1, num2 = 1) => {
+                            return num1 + num2;
+                        }
+                        
+                        // will return 10
+                        console.log(addNums(5, 5));
+
+                    </pre>
+                </p>
+                <p>One line function as variable
+                    <pre>
+                        
+                        //initialize function as variable
+                        const addNums = (num1 = 1, num2 = 1) => console.log(num1 + num2);
+
+                        // will return 10
+                        addNums(5,5);
+
+                    </pre>
+                </p>
+                <p>One line function as variable with return
+                    <pre>
+                        
+                        //initialize function as variable
+                        const addNums = (num1 = 1, num2 = 1) => { return num1 + num2 };
+
+                        // will return 10
+                        console.log(addNums(5,5));
+
+                    </pre>
+                </p>
+                <p>One line function as variable return values directly without keys (NO NEED OF RETURN KEYWORD)
+                    <pre>
+                        
+                        //initialize function as variable
+                        const addNums = (num1 = 1, num2 = 1) => num1 + num2 ;
+
+                        // will return 10
+                        console.log(addNums(5,5));
+
+                    </pre>
+                </p>
+                <p>One line function as variable return values directly without keys (NO NEED OF RETURN KEYWORD)<br>
+                    and just one parameter 
+                    <pre>
+                        
+                        //initialize function as variable
+                        const addNums = num1 => num1 + 5 ;
+
+                        // will return 10
+                        console.log(addNums(5));
+
+                    </pre>
+                </p>
+                <h2>Objects Oriented Programming</h2>
+                <p> Construct function 
+                    <pre>
+                        // Constructor function
+                        function Person(firstName, lastName, dob) {
+                            this.firstName = firstName;
+                            this.lastName = lastName;
+                            this.dob = dob;
+                        }
+
+                        // Instantiate object
+                        const person1 = new Person('John', 'Doe', '4-3');
+                        const person2 = new Person('Marie', 'De la rocket', '4-7');
+
+                        // will return {firstName: "John", lastName: "Doe", dob: "4-3"}
+                        console.log(person1);
+
+                        // will return {firstName: "Mare", lastName: "De la rocket", dob: "4-7"}
+                        console.log(person2);
+
+                        // will return John
+                        console.log(person1.firstName);
+
+                        // will return De la rocket
+                        console.log(person2.lastName);
+                        
+                    </pre>
+                </p>
+                <p> Object Methods in construct function
+                    <pre>
+                        // Constructor function
+                        function Person(firstName, lastName, dob) {
+                            this.firstName = firstName;
+                            this.lastName = lastName;
+                            this.dob = new Date(dob);
+                            this.getBirthYear = function() {
+                                return this.dob.getFullYear();
+                            }
+                            this.getFullName = () => `${this.firstName} ${this.lastName}`;
+                        }
+
+                        // Instantiate object
+                        const person1 = new Person('John', 'Doe', '4-3-1980');
+                        const person2 = new Person('Marie', 'De la rocket', '4-7-1990');
+
+                        // will return current date (Thu Apr 03 1980 00:00:00 GMT-0500 (hora estándar de Colombia))
+                        console.log(person1.dob);
+
+                        // will return 1980
+                        console.log(person1.getBirthYear());
+
+                        // will return John Doe
+                        console.log(person1.getFullName());
+                        
+                    </pre>
+                </p>
+                <p> Prototype of construct function
+                    <pre>
+                        // Constructor function
+                        function Person(firstName, lastName, dob) {
+                            this.firstName = firstName;
+                            this.lastName = lastName;
+                            this.dob = new Date(dob);
+                        }
+
+                        // prototyping methods 
+                        Person.prototype.getBirthYear = function() {
+                            return this.dob.getFullYear();
+                        }
+                        Person.prototype.getFullName = function () {
+                            return `${this.firstName} ${this.lastName}`;
+                        } 
+
+                        // Instantiate object
+                        const person1 = new Person('John', 'Doe', '4-3-1980');
+                        const person2 = new Person('Marie', 'De la rocket', '4-7-1990');
+
+                        // will return 1980
+                        console.log(person1.getBirthYear()); 
+
+                        // will return John Doe
+                        console.log(person1.getFullName()); 
+
+                    </pre>
+                </p>
+
+                <p> Object with Classes
+                    <p>this is the best way working with objects</p>
+                    <pre>
+                        class Person {
+    
+                            // Constructor function
+                            constructor(firstName, lastName, dob) {
+                                // properties
+                                this.firstName = firstName;
+                                this.lastName = lastName;
+                                this.dob = new Date(dob);
+                            }
+                        
+                            // class method getBirthYear
+                            getBirthYear() {
+                                return this.dob.getFullYear();
+                            }
+                        
+                            // class method getFullName
+                            getFullName() {
+                                return `${this.firstName} ${this.lastName}`;
+                            }
+                        }
+                        
+                        // Instantiate object
+                        const person1 = new Person('John', 'Doe', '4-3-1980');
+                        const person2 = new Person('Marie', 'De la rocket', '4-7-1990');
+                        
+                        // will return John
+                        console.log(person1.firstName); 
+                        
+                        // will return 1980
+                        console.log(person1.getBirthYear()); 
+                        
+                        // will return Marie De la rocket
+                        console.log(person2.getFullName()); 
+                        
+                    </pre>
+                </p>
+                <h2>DOM</h2>
+                <p><a href="./add/index.html">ADD EXERCISE PAGE</a></p>
+                <h2>Document Methods</h2>
+                <h3>Selectors for single elements</h3>
+                <p>getElementById(ID)</p>
+                <p>
+                    <pre>
+                        const form = document.getElementById('my-form');
+
+                        // will return the dom of form element in html
+                        console.log(form);
+                    </pre>
+                </p>
+                <p>querySelector(ELEMENT)</p>
+                <p>
+                    <pre>
+                        const container = document.querySelector('.container');
+                        // will return the dom of form element with class container in html
+                        console.log(container)
+
+                        const form = document.querySelector('#my-form');
+                        // will return the dom of form element with id my-form in html
+                        console.log(form)
+
+                        const h1 = document.querySelector('h1');
+                        // will return the dom of form element with tag name h1 in html
+                        console.log(h1)
+                    </pre>
+                </p>
+                <h3>Selectors for Multiple elements</h3>
+                <p>getElementsByClassName(Class)</p>
+                <p>
+                    <pre>
+                        const items = document.getElementsByClassName('item');
+
+                        // will return HTMLCollection(3) [li.item, li.item, li.item] (array of elements with class item)
+                        console.log(items);
+                    </pre>
+                </p>
+                <p>querySelectorAll(Element)</p>
+                <p>
+                    we can call any ellement by class, tag or id
+                    <pre>
+                        const items = document.querySelectorAll('.item');
+
+                        // will return NodeList(3) [li.item, li.item, li.item] (array of elements with class .item)
+                        console.log(items);
+                    </pre>
+                </p>
+                <h3>Loop selectors in dom</h3>
+                <p>nodes.forEach()</p>
+                <p>
+                    <pre>
+                        const items = document.querySelectorAll('.item'); 
+                        //will return each element of the selector with class .item
+                        items.forEach((item)=>console.log(item));
+                    </pre>
+                </p>
+                <h3>Element Methods and Properties</h3>
+                <p>
+                    <pre>
+                        // selector for element with class items
+                        const ul = document.querySelector('.items');
+
+                        // will delete the ul element from the html document
+                        ul.remove();
+
+                        // will remove last child element of the ul
+                        ul.lastElementChild.remove();
+
+                        // will add text hello to last child 
+                        ul.lastElementChild.textContent ="Hello";
+
+                        // will remove second child (1 position) of the ul children 
+                        ul.children[1].remove();
+                        
+                        // will add text hello to second child (1 position) of the ul children 
+                        ul.children[1].textContent = "Hello";
+
+                        // will add h4 html tag to last child 
+                        ul.lastElementChild.innerHTML = "<h4>Hello</h4>";
+                    </pre>
+                </p>
+                <h3>Style properties</h3>
+                <p>
+                    <pre>
+                        const btn = document.querySelector('.btn');
+
+                        // will add background red to button
+                        btn.style.background = 'red';
+                    </pre>
+                </p>
+                <h3>Dom Events</h3>
+                <p>Click event</p>
+                <p>
+                    <b>addEventListener('clic', (e) => {/*content*/})</b>
+                    <pre>
+                        const btn = document.querySelector('.btn');
+
+                        btn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            alert('click');
+                        });
+
+                        btn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            console.log(e.target.className);
+                        });
+
+                    </pre>
+                </p>
+                <p>adding color to other element </p>
+                <pre>
+                    const btn = document.querySelector('.btn');
+
+                    // adding style to html tag my-form
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        document.querySelector('#my-form').style.background = '#ccc';
+                    });
+
+                    // adding css class to html tag
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        document.querySelector('body').classList.add('bg-dark');
+                    });
+                </pre>
+                <p>Creating node and adding to ul element</p>
+                <pre>
+                    btn.addEventListener('click', (e) => {
+
+                        e.preventDefault();
+                    
+                        // creating new node
+                        const node = document.createElement('LI');
+                    
+                        // adding content to node
+                        const textnode = document.createTextNode("Watter");
+                    
+                        // adding content to the node
+                        node.appendChild(textnode);
+                    
+                        // adding class to the node
+                        node.className = "item";
+                    
+                        //adding node to existing ul element
+                        document.querySelector('.items').appendChild(node);
+                        
+                    });
+                </pre>
+                <h2>
+                    JS APP 
+                </h2>
+                <pre>
+                    // USER FORM SCRIPT
+
+                    // Put DOM elements into variables
+                    const myForm = document.querySelector('#my-form');
+                    const nameInput = document.querySelector('#name');
+                    const emailInput = document.querySelector('#email');
+                    const msg = document.querySelector('.msg');
+                    const userList = document.querySelector('#users');
+                    const deleteButtons = document.querySelectorAll('.btn-delete');
+
+
+                    // Listen for form submit
+                    myForm.addEventListener('submit', onSubmit);
+
+                    function onSubmit(e) {
+                    e.preventDefault();
+                    
+                    if(nameInput.value === '' || emailInput.value === '') {
+                        // alert('Please enter all fields');
+                        msg.classList.add('error');
+                        msg.innerHTML = 'Please enter all fields';
+
+                        // Remove error after 3 seconds
+                        setTimeout(() => msg.remove(), 3000);
+                    } else {
+                        // Create new list item with user
+                        const li = document.createElement('li');
+                        const ico = document.createElement('i');
+                        const btnDel = document.createElement('a');
+
+                        // add classes
+                        ico.classList.add('icon');
+                        btnDel.classList.add('btn-delete');
+
+                        // href attribute to delete button
+                        btnDel.setAttribute("href","javascript:void(0)");
+
+                        // add event listener to btnDel
+                        btnDel.addEventListener('click', onDelete);
+
+                        // add text to icon
+                        ico.appendChild(document.createTextNode('x'));
+
+                        // add icon tag to delete button
+                        btnDel.appendChild(ico);
+
+                        // Add text node with input values to item
+                        li.appendChild(document.createTextNode(`${nameInput.value}: ${emailInput.value}`));
+
+                        // add delete button to item
+                        li.appendChild(btnDel);
+                        
+                        // Adding HTML Instead
+                        // li.innerHTML = `<strong>${nameInput.value}</strong>e: ${emailInput.value}`;
+
+                        // Append to ul
+                        userList.appendChild(li);
+
+                        // Clear fields
+                        nameInput.value = '';
+                        emailInput.value = '';
+                    }
+                    }
+
+                    // Listen for delet button
+                    deleteButtons.forEach((deleteButton)=>deleteButton.addEventListener('click', onDelete));
+
+                    function onDelete(e) {
+                    e.preventDefault();
+                    this.parentNode.remove();
+                    }
+                </pre>
+                <script src="./js/main.js"></script>
+            </div>
+        </main>
+    </body>
+</html>

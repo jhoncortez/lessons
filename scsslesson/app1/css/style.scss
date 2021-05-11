@@ -1,0 +1,48 @@
+/* import reset.scss */
+@import "standard";
+
+/* define variables */
+$color : blue;
+
+/* Use variables and include important properties to body from standard.css */
+body.home_page {
+    /* include important-body-properties mixin function */
+    @include important-body-properties;
+    /* apply e@xtend to copy styles from .parragraph-basics class in standar.css
+    /* include colorAndSize mixin function with parameters color and fontsize */
+    p {
+        @extend .parragraph-basics;
+        @include colorAndSize($color , $fontSize);
+    }
+  }
+
+/* nested syntax */
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    li.menu-item {
+        display: inline-block;
+    }
+    a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+        @include colorAndSize(black, $menuFontSize);
+    }
+}
+
+/* nested porperties syntax */
+h1 {
+    font: {
+        family: Times, sans-serif;
+        size: 50px;
+        weight: normal;
+    }
+    text: {
+        transform: uppercase;
+    }
+    color: black;
+}

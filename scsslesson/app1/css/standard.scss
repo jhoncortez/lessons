@@ -1,0 +1,46 @@
+/* import reset.scss */
+@import "reset";
+
+/* define variables */
+$font: Helvetica, sans-serif;
+$color : red;
+$fontSize : 16px;
+$widthContainer : 680px;
+$marginAuto: auto auto;
+
+// new variables to import and use in style.scss and standard.scss
+$menuFontSize: 20px;
+
+// function mixin important-body-properties
+@mixin important-body-properties {
+    font-family: $font;
+    font-size: $fontSize;
+}
+
+// function mixin colorAndSize
+@mixin colorAndSize($c, $s) {
+    color: $c;
+    font-size: $s;
+}
+
+/* use variables and import important properties to body */
+body.import_page {
+    @include important-body-properties;
+    /* include colorAndSize with parameters color and fontsize */
+    p {
+        @extend .parragraph-basics;
+        @include colorAndSize($color , $fontSize);
+    }
+}
+
+.container {
+    width: $widthContainer;
+    margin: $marginAuto;
+}
+
+/* class for @extends and Inheritance proporse */
+.parragraph-basics{
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
