@@ -1,0 +1,13 @@
+version: "3"
+
+services: 
+    app1:
+        container_name: nodecrashcoruse
+        restart: always
+        build: .
+        ports:
+            - "3000:3000"
+            - "8000:8000"
+        volumes: 
+            - ./src:/usr/src/app
+    
