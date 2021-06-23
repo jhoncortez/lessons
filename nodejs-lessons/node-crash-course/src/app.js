@@ -20,3 +20,10 @@
 
 // lodash_findUsersByAge(1);
 // // will return { user: 'pebbles', age: 1, active: true }
+
+// LESSON 4 - EXPRESS
+// LOAD EXPRESS
+const runExpressServer = require('./lessons/lesson4/express')
+
+// run express server
+runExpressServer();
