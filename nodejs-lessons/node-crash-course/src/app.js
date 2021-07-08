@@ -23,7 +23,33 @@
 
 // LESSON 4 - EXPRESS
 // LOAD EXPRESS
-const runExpressServer = require('./lessons/lesson4/express')
+// const runExpressServer = require('./lessons/lesson4/express')
 
 // run express server
-runExpressServer();
+// runExpressServer();
+
+// LESSON 5 - EXPRESS
+// LOAD EXPRESS
+//const runExpressServer = require('./lessons/lesson5/express-server')
+
+// run express server
+//runExpressServer();
+
+// LESSON 6 MIDDLEWARES
+// LOAD EXPRESS
+//const runExpressServer = require('./lessons/lesson6/express-server')
+
+// run express server
+//runExpressServer();
+
+// LESSON 7 Mongodb
+// LOAD EXPRESS
+// const runServer = require('./lessons/lesson7/express-server')
+
+// runServer();
+
+// LESSON 8 Get, Post request and Save data
+// LOAD EXPRESS
+const runServer = require('./lessons/lesson8/express-server')
+
+runServer();
