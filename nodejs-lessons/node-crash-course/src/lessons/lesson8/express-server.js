@@ -18,7 +18,9 @@ const path = require('path');
 // require morgan
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const Blog = require('./models/blog');
+
+//import routes
+const blogRoutes = require('./routes/blogRoutes')
 
 // set port and express server
 const port = 8000;
@@ -80,75 +82,6 @@ app.get('/user/:id', (req, res) => {
     res.send('hello world'+req.params.id)
 })
 
-// mongoose & mongo tests
-app.get('/add-blogDocument', (req, res) => {
-    const blogDocument = new Blog({
-      title: 'Test this',
-      snippet: 'about my new blog',
-      body: 'more about my new blog'
-    })
-  
-    blogDocument.save()
-      .then(result => {
-        res.send(result);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  });
-
-app.get('/all-blogDocuments', (req, res) => {
-    Blog.find()
-      .then(result => {
-        res.send(result);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  });
-
-app.get('/single-blogDocument', (req, res) => {
-    Blog.findById('60e4e575b4c0a9970cc172c9')
-      .then(result => {
-        res.send(result);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }); 
-
-app.get('/find-blogDocument', (req, res) => {
-    Blog.findOne({ title: 'Test this' })
-      .then(result => {
-        res.send(result);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-}); 
-
-/// RENDERING VIEWS REQUESTS
-
-// blog
-app.get('/blog', (req, res) => {
-  Blog.find().sort({createdAt: -1})
-  .then(result => {
-      res.render('index', { blogs: result, title: 'All blogs' });
-  })
-  .catch( err => {
-      console.log(err)
-  })
-})
-// get blog
-app.get('/blog/:id', (req, res) => {
-  Blog.findById(req.params.id)
-  .then(result => {
-      res.render('single', { blog: result, title: `Single Blog: ${result.title}` });
-  })
-  .catch( err => {
-      console.log(err)
-  })
-})
 // about
 app.get('/about', (req, res) => {
     // init demo content
@@ -156,45 +89,10 @@ app.get('/about', (req, res) => {
     // render index ejs view
     res.render('about', {"title":'About', "content": content})
 })
-// create blog view
-app.get('/blogs/create', (req, res) => {
-    // render index ejs view
-    res.render('create-blog', {"title":'Create new blog'})
-})
 
+// use blog routs
+app.use('/blog',blogRoutes)
 
-// POST REQUEST LOGIC FOR SAVE, UPDATE DATA
-
-// create blog document
-app.post('/blog/create', (req, res) => {
-  //console.log(req.body);
-  const blogDocument = new Blog(req.body)
-
-  blogDocument.save()
-    .then(result => {
-      res.redirect('/blog');
-    })
-    .catch(err => {
-      console.log(err);
-    });
-})
-
-// DELETE REQUESTS
-
-// delete blog
-app.delete('/blog/:id', (req, res) => {
-  const id = req.params.id;
-  
-  Blog.findByIdAndDelete(id)
-  .then(result => {
-    res.json({
-      "redirect": '/blog/'
-    })
-  })
-  .catch( err => {
-      console.log(err)
-  })
-})
 // REDIRECTS
 
 // home redirected to blog
