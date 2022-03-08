@@ -1,0 +1,2 @@
+#!/bin/bash
+git clone --branch lesson-2 git@github.com:iamshaunjp/Complete-React-Tutorial.git
