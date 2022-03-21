@@ -1,5 +1,7 @@
 import './App.css';
 import Todo from './components/Todo';
+import Modal from './components/Modal';
+import Backdrop from './components/Backdrop';
 
 const App = () => {
   return (
@@ -8,6 +10,8 @@ const App = () => {
       <Todo title="To do 1" />
       <Todo title="To do 2"/>
       <Todo title="To do 3"/>
+      <Modal />
+      <Backdrop />
     </div>
   );
 }
