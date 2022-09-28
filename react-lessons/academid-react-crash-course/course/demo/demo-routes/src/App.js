@@ -1,17 +1,17 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom'
 
-import MainNavigation from './components/Layout/MainNavigation'
+// import MainNavigation from './components/Layout/MainNavigation'
+import Layout from './components/Layout/Layout'
 
 import AllMeetupsPage from './pages/AllMeetups'
 import FavoritesPage from './pages/Favorites'
-import NewMeetupPage from './pages/NewMeetup'
+import NewMeetupPage from './pages/NewMeetUp'
 
 
 function App() {
   return (
-    <div>
-      
-      <MainNavigation />
+    <Layout>
       
       <Routes>
         <Route path="/" element={<AllMeetupsPage />} />
@@ -19,7 +19,7 @@ function App() {
         <Route path="new-meetup" element={<NewMeetupPage />} />
       </Routes>
 
-    </div>
+    </Layout>
   );
 }
 
